@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -16,10 +17,11 @@
       min-height:100vh;
       display:flex;
       justify-content:center;
-      align-items:center;
+      align-items:flex-start;
       background:linear-gradient(135deg,#ffd6e7,#ffeaf4,#ffdff0);
       font-family:'Quicksand', sans-serif;
-      overflow:hidden;
+      padding:20px;
+      overflow-y:auto;
     }
 
     .bg-bubble{
@@ -69,6 +71,7 @@
       box-shadow:0 12px 30px rgba(255,105,180,0.18);
       text-align:center;
       animation:popIn .7s ease;
+      margin:20px auto;
     }
 
     @keyframes popIn{
