@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -268,7 +267,7 @@
   <div class="bg-bubble b3"></div>
 
   <div class="container">
-    <h1>💗 Scientific Notation Scanner 💗</h1>
+    <h1> Scientific Notation Scanner </h1>
     <div class="sub">This scanner accepts both computer notation using <b>e</b> and mathematical notation using <b>×10^</b>.</div>
 
     <div class="input-box">
