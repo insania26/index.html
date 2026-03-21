@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Scientific Notation Scanner</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
@@ -258,91 +258,6 @@
       font-size:13px;
       color:#aa7a90;
     }
-
-    /* ===== TAMBAHAN UNTUK MOBILE SCROLL ===== */
-    @media (max-width: 768px) {
-        body {
-            overflow-y: auto !important;
-            overflow-x: hidden !important;
-            -webkit-overflow-scrolling: touch;
-            height: auto;
-            min-height: 100vh;
-            display: block;
-            padding: 15px;
-        }
-        
-        .container {
-            width: 95%;
-            max-width: 100%;
-            margin: 10px auto;
-            padding: 20px 15px;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            display: block;
-        }
-        
-        .btn-group {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 8px;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            padding-bottom: 10px;
-        }
-        
-        .small-btn {
-            padding: 8px 12px;
-            font-size: 13px;
-            white-space: nowrap;
-        }
-        
-        input {
-            font-size: 16px !important;
-            max-width: 100%;
-        }
-        
-        .result {
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-        }
-        
-        .examples .btn-group {
-            overflow-x: auto;
-            display: flex;
-            flex-wrap: nowrap;
-            justify-content: flex-start;
-            padding-bottom: 10px;
-        }
-        
-        .examples .btn-group::after {
-            content: "← geser →";
-            font-size: 10px;
-            color: #aa7a90;
-            margin-left: 8px;
-            white-space: nowrap;
-        }
-        
-        .input-box {
-            flex-wrap: wrap;
-        }
-        
-        .main-btn {
-            padding: 10px 16px;
-        }
-        
-        h1 {
-            font-size: 24px;
-        }
-        
-        .sub {
-            font-size: 13px;
-        }
-        
-        .section-title {
-            font-size: 14px;
-        }
-    }
   </style>
 </head>
 <body>
@@ -352,17 +267,17 @@
   <div class="bg-bubble b3"></div>
 
   <div class="container">
-    <h1>✨ Scientific Notation Scanner ✨</h1>
+    <h1> Scientific Notation Scanner </h1>
     <div class="sub">This scanner accepts both computer notation using <b>e</b> and mathematical notation using <b>×10^</b>.</div>
 
     <div class="input-box">
       <input type="text" id="numberInput" placeholder="Example: 3.5e4 or 3.5×10^4">
-      <button class="main-btn check-btn" onclick="checkInput()">✓ Check</button>
-      <button class="main-btn clear-btn" onclick="clearInput()">🗑 Clear</button>
+      <button class="main-btn check-btn" onclick="checkInput()">Check</button>
+      <button class="main-btn clear-btn" onclick="clearInput()">Clear</button>
     </div>
 
     <div class="pad">
-      <div class="section-title">📱 Input Helper Buttons</div>
+      <div class="section-title">Input Helper Buttons</div>
       <div class="btn-group">
         <button class="small-btn pink" onclick="addText('0')">0</button>
         <button class="small-btn pink" onclick="addText('1')">1</button>
@@ -380,11 +295,11 @@
         <button class="small-btn peach" onclick="addText('-')">-</button>
         <button class="small-btn peach" onclick="addText('+')">+</button>
       </div>
-      <div class="mini">💡 Use these buttons to build scientific notation more easily.</div>
+      <div class="mini">Use these buttons to build scientific notation more easily.</div>
     </div>
 
     <div class="examples">
-      <div class="section-title">✅ Valid Examples</div>
+      <div class="section-title">Valid Examples</div>
       <div class="btn-group">
         <button class="small-btn mint" onclick="setExample('1.2e3')">1.2e3</button>
         <button class="small-btn mint" onclick="setExample('6.5e7')">6.5e7</button>
@@ -395,7 +310,7 @@
     </div>
 
     <div class="examples">
-      <div class="section-title">❌ Invalid Examples</div>
+      <div class="section-title">Invalid Examples</div>
       <div class="btn-group">
         <button class="small-btn peach" onclick="setExample('1500')">1500</button>
         <button class="small-btn peach" onclick="setExample('0.75')">0.75</button>
