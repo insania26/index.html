@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,20 +8,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
+
     *{
       box-sizing:border-box;
     }
 
+    html, body{
+      height:100%;
+    }
+
     body{
       margin:0;
-      min-height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:flex-start;
       background:linear-gradient(135deg,#ffd6e7,#ffeaf4,#ffdff0);
       font-family:'Quicksand', sans-serif;
       padding:20px;
-      overflow-y:auto;
+      overflow-y:scroll;
     }
 
     .bg-bubble{
@@ -70,7 +72,7 @@
       box-shadow:0 12px 30px rgba(255,105,180,0.18);
       text-align:center;
       animation:popIn .7s ease;
-      margin:20px auto;
+      margin:40px auto;
     }
 
     @keyframes popIn{
@@ -183,30 +185,11 @@
       transform:scale(1.06);
     }
 
-    .pink{
-      background:#ffd9ea;
-      color:#9e4b72;
-    }
-
-    .lavender{
-      background:#eee0ff;
-      color:#7f5aa6;
-    }
-
-    .mint{
-      background:#dff7ea;
-      color:#3d8b68;
-    }
-
-    .peach{
-      background:#ffe5dc;
-      color:#b56b63;
-    }
-
-    .butter{
-      background:#fff2bf;
-      color:#9d7a16;
-    }
+    .pink{ background:#ffd9ea; color:#9e4b72; }
+    .lavender{ background:#eee0ff; color:#7f5aa6; }
+    .mint{ background:#dff7ea; color:#3d8b68; }
+    .peach{ background:#ffe5dc; color:#b56b63; }
+    .butter{ background:#fff2bf; color:#9d7a16; }
 
     .result{
       margin-top:22px;
@@ -219,17 +202,9 @@
     }
 
     @keyframes bounceIn{
-      0%{
-        opacity:0;
-        transform:scale(0.85);
-      }
-      60%{
-        transform:scale(1.05);
-      }
-      100%{
-        opacity:1;
-        transform:scale(1);
-      }
+      0%{ opacity:0; transform:scale(0.85); }
+      60%{ transform:scale(1.05); }
+      100%{ opacity:1; transform:scale(1); }
     }
 
     .success{
@@ -258,8 +233,10 @@
       font-size:13px;
       color:#aa7a90;
     }
+
   </style>
 </head>
+
 <body>
 
   <div class="bg-bubble b1"></div>
@@ -267,8 +244,8 @@
   <div class="bg-bubble b3"></div>
 
   <div class="container">
-    <h1> Scientific Notation Scanner </h1>
-    <div class="sub">This scanner accepts both computer notation using <b>e</b> and mathematical notation using <b>×10^</b>.</div>
+    <h1>Scientific Notation Scanner</h1>
+    <div class="sub">Supports both <b>e</b> format and <b>×10^</b> format</div>
 
     <div class="input-box">
       <input type="text" id="numberInput" placeholder="Example: 3.5e4 or 3.5×10^4">
@@ -277,9 +254,8 @@
     </div>
 
     <div class="pad">
-      <div class="section-title">Input Helper Buttons</div>
+      <div class="section-title">Input Helper</div>
       <div class="btn-group">
-        <button class="small-btn pink" onclick="addText('0')">0</button>
         <button class="small-btn pink" onclick="addText('1')">1</button>
         <button class="small-btn pink" onclick="addText('2')">2</button>
         <button class="small-btn pink" onclick="addText('3')">3</button>
@@ -289,34 +265,12 @@
         <button class="small-btn pink" onclick="addText('7')">7</button>
         <button class="small-btn pink" onclick="addText('8')">8</button>
         <button class="small-btn pink" onclick="addText('9')">9</button>
+        <button class="small-btn pink" onclick="addText('0')">0</button>
         <button class="small-btn butter" onclick="addText('.')">.</button>
         <button class="small-btn lavender" onclick="addText('e')">e</button>
         <button class="small-btn lavender" onclick="addText('×10^')">×10^</button>
         <button class="small-btn peach" onclick="addText('-')">-</button>
         <button class="small-btn peach" onclick="addText('+')">+</button>
-      </div>
-      <div class="mini">Use these buttons to build scientific notation more easily.</div>
-    </div>
-
-    <div class="examples">
-      <div class="section-title">Valid Examples</div>
-      <div class="btn-group">
-        <button class="small-btn mint" onclick="setExample('1.2e3')">1.2e3</button>
-        <button class="small-btn mint" onclick="setExample('6.5e7')">6.5e7</button>
-        <button class="small-btn mint" onclick="setExample('8.01e-4')">8.01e-4</button>
-        <button class="small-btn mint" onclick="setExample('3.2×10^5')">3.2×10^5</button>
-        <button class="small-btn mint" onclick="setExample('-4.7×10^-3')">-4.7×10^-3</button>
-      </div>
-    </div>
-
-    <div class="examples">
-      <div class="section-title">Invalid Examples</div>
-      <div class="btn-group">
-        <button class="small-btn peach" onclick="setExample('1500')">1500</button>
-        <button class="small-btn peach" onclick="setExample('0.75')">0.75</button>
-        <button class="small-btn peach" onclick="setExample('5ee3')">5ee3</button>
-        <button class="small-btn peach" onclick="setExample('12e')">12e</button>
-        <button class="small-btn peach" onclick="setExample('2×10')">2×10</button>
       </div>
     </div>
 
@@ -327,11 +281,6 @@
   <script>
     function addText(text){
       document.getElementById("numberInput").value += text;
-    }
-
-    function setExample(example){
-      document.getElementById("numberInput").value = example;
-      checkInput();
     }
 
     function clearInput(){
@@ -352,26 +301,20 @@
 
       if(computerPattern.test(input)){
         result.className = "result success";
-        result.innerHTML = "✔ Valid scientific notation in computer format";
-        note.innerHTML = "Accepted format: <b>a e n</b>, for example <b>3.5e4</b>.";
+        result.innerHTML = "✔ Valid (computer format)";
+        note.innerHTML = "Example: 3.5e4";
       }
       else if(mathPattern.test(input)){
         result.className = "result success";
-        result.innerHTML = "✔ Valid scientific notation in mathematical format";
-        note.innerHTML = "Accepted format: <b>a × 10^n</b>, for example <b>3.5×10^4</b>.";
+        result.innerHTML = "✔ Valid (math format)";
+        note.innerHTML = "Example: 3.5×10^4";
       }
       else{
         result.className = "result fail";
         result.innerHTML = "✖ Invalid scientific notation";
-        note.innerHTML = "Try a format like <b>2.3e5</b> or <b>2.3×10^5</b>.";
+        note.innerHTML = "Use 2.3e5 or 2.3×10^5";
       }
     }
-
-    document.getElementById("numberInput").addEventListener("keydown", function(event){
-      if(event.key === "Enter"){
-        checkInput();
-      }
-    });
   </script>
 
 </body>
